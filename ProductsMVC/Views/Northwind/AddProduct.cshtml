@@ -1,0 +1,24 @@
+﻿@model AddProductViewModel
+
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<h1>Add Product</h1>
+<form asp-controller="Northwind" asp-action="AddProductResult">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" /><br />
+    <label asp-for="QuantityPerUnit">Quantity Per Unit</label>
+    <input asp-for="QuantityPerUnit" /><br />
+    <label asp-for="UnitPrice">Unit Price</label>
+    <input asp-for="UnitPrice" /><br />
+    <label asp-for="UnitsInStock">Units in Stock</label>
+    <input asp-for="UnitsInStock" /><br />
+    <label asp-for="UnitsOnOrder">Units on Order</label>
+    <input asp-for="UnitsOnOrder" /><br />
+    <label asp-for="ReorderLevel">Reorder Level</label>
+    <input asp-for="ReorderLevel" /><br />
+    <label asp-for="Discontinued"></label>
+    <input asp-for="Discontinued" /><br />
+    <button>Add Item</button>
+</form>

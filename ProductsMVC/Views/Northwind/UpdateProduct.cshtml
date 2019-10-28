@@ -1,0 +1,24 @@
+﻿@model UpdateProductViewModel
+
+@{
+    ViewData["Title"] = "Update Product";
+}
+
+<h1>Update Product</h1>
+<form asp-controller="Northwind" asp-action="UpdateProductResult" asp-route-id="@Model.Id">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" /><br />
+    <label asp-for="QuantityPerUnit"></label>
+    <input asp-for="QuantityPerUnit" /><br />
+    <label asp-for="UnitPrice"></label>
+    <input asp-for="UnitPrice" /><br />
+    <label asp-for="UnitsInStock">Units in Stock</label>
+    <input asp-for="UnitsInStock" /><br />
+    <label asp-for="UnitsOnOrder">Units on Order</label>
+    <input asp-for="UnitsOnOrder" /><br />
+    <label asp-for="ReorderLevel">Reorder Level</label>
+    <input asp-for="ReorderLevel" /><br />
+    <label asp-for="Discontinued"></label>
+    <input asp-for="Discontinued" /><br />
+    <button>Update Item</button>
+</form>

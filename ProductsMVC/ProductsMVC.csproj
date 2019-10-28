@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Dapper" Version="2.0.30" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="DAL\Models\" />
+    <Folder Include="NorthwindServices\" />
+    <Folder Include="Views\Northwind\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="NorthwindServices\MapProduct.cs" />
+    <Compile Remove="Models\AddProductResultViewModel.cs" />
+  </ItemGroup>
+</Project>

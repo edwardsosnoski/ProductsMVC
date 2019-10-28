@@ -1,0 +1,22 @@
+﻿@model ProductListItemViewModel
+
+@{
+    ViewData["Title"] = "Selected Product";
+}
+
+<form>
+    <h1>@Model.Name</h1>
+    <ul>
+        <li><b>Product ID:</b> @Model.Id</li>
+        <li><b>Supplier ID:</b> @Model.SupplierId</li>
+        <li><b>Category ID:</b> @Model.CategoryId</li>
+        <li><b>Quantity Per Unit:</b> @Model.QuantityPerUnit</li>
+        <li><b>Unit Price:</b> @Model.UnitPrice</li>
+        <li><b>Units in Stock:</b> @Model.UnitsInStock</li>
+        <li><b>Units on Order:</b> @Model.UnitsOnOrder</li>
+        <li><b>Reorder Level:</b> @Model.ReorderLevel</li>
+        <li><b>Discontinued:</b> @Model.Discontinued</li>
+    </ul>
+    <button asp-controller="Northwind" asp-action="UpdateProduct" asp-route-id="@Model.Id">Update Item</button> 
+    <button asp-controller="Northwind" asp-action="DeleteProductResult" asp-route-id="@Model.Id">Delete Item</button>
+</form>
